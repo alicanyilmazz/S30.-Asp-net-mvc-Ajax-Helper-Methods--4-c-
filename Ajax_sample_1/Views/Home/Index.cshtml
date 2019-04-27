@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@Ajax.ActionLink("Upload Data", "LoadData", null, new AjaxOptions() { HttpMethod = "GET", UpdateTargetId = "catchdata", InsertionMode = InsertionMode.Replace, LoadingElementId = "loading_bar", LoadingElementDuration = 300 }, new { @class = "btn btn-success" })
+
+<hr />
+
+<div id="loading_bar" class="alert alert-warning" style="display:none;">
+    Loading...
+</div>
+<ul id="catchdata" class="list-group"></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@* Normalde  @Html.  dedikten sonra Html Helper methodlarımız geliyordu Burada da Ajax.  deyince Ajax Helper mothodlarımız gelecek.*@
+
+@*Ajax helper methodlarımızdan ActionLink ile bir Link koyup bir button koyup o button a tıklandıgında Ajax ile ilgili bir veri çekilebileceği gibi (Veri çekme) *@
+
+@*Ajax helper methodlarımızdan BeginForm ile de bir button a tıklandıgında bir veriyi sunucuya göndermede kullanabiliriz.(Veri gönderme) *@
